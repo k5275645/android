@@ -30,7 +30,7 @@ fun main(args: Array<String>) {
     val value4: Int = 10
     when(value4){
         is Int -> {
-            println(value4 is Int)
+            println(value4 is Int) // true
             println("value4 is Int")
         }
         else -> {
