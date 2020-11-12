@@ -2,7 +2,7 @@ package com.example.myapplication.Kotlin
 
 import java.util.*
 
-// 자바코드를 코틀린에 넣으면 자동으로 변환해줌(오류가 없다면)
+// 자바코드를 코틀린에 넣으면 자동으로 변환해줌(오류가 없다면 완전하게)
 object HelloWorld {
     @JvmStatic
     fun main(args: Array<String>) {

@@ -34,7 +34,6 @@ class Teacher_:Person_{
 
     override fun sleep() {
     }
-
 }
 
 //

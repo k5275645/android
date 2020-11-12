@@ -12,7 +12,7 @@ fun main(args: Array<String>) {
 }
 
 //상속이 만들어낸 개념
-// - 자식 클래스는 부모 클래스의 타입니다.
+// - 자식 클래스는 부모 클래스의 타입이다.
 // - 부모 클래스는 자식 클래스의 타입이 아니다!
 
 open class Charator(var hp:Int, val power:Int){

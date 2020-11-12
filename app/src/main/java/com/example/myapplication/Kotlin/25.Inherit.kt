@@ -10,8 +10,6 @@ fun main(args: Array<String>) {
 
     //val bus100: Bus100 = Bus100()
     //bus100.drive()
-
-
 }
 
 // class를 선언할 때는 private이 기본이다. 적지 않아도 private상태임
