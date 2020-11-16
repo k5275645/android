@@ -9,7 +9,7 @@
 
     <ImageView
         android:layout_width="300dp"
-        android:background="#871B1B"
+        android:background="@color/colorPrimary"
         android:layout_height="300dp"/>
     
     <TextView
