@@ -28,7 +28,7 @@ fun main(args: Array<String>) {
         println(it)
     }
 
-    // 반복하는 방법 (4)
+    // 반복하는 방법 (4) lamda
     println()
     a.forEach{item ->
         println(item)
