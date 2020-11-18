@@ -7,6 +7,8 @@ import androidx.fragment.app.FragmentManager
 import kotlinx.android.synthetic.main.activity_fragment.*
 
 class FragmentActivity : AppCompatActivity(), FragmentOne.OnDataPassListener {
+
+    // Fragment에게 값을 받기 위한 작업?
     override fun onDataPass(data: String?) {
         Log.d("pass", ""+data)
     }
@@ -17,6 +19,7 @@ class FragmentActivity : AppCompatActivity(), FragmentOne.OnDataPassListener {
         Log.d("life_cycle", "onCreate")
 
         val fragmentOne : FragmentOne = FragmentOne()
+
         // 프라그먼트에 data를 넣어주는 방법
         val bundle:Bundle = Bundle()
         bundle.putString("hello", "hellovalue")

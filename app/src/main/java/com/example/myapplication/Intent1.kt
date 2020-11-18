@@ -5,13 +5,13 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import kotlinx.android.synthetic.main.activity_intent.*
+import kotlinx.android.synthetic.main.activity_intent1.*
 import kotlinx.android.synthetic.main.activity_intent2.*
 
 class Intent1 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_intent)
+        setContentView(R.layout.activity_intent1)
 
         change_activity.setOnClickListener {
 //            //this@Intent1에서 @Intent1은 생략해도됨 this가 Intent1을 가르키기 때문.

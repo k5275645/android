@@ -11,6 +11,7 @@ import kotlinx.android.synthetic.main.fragment_one.*
 
 class FragmentOne: Fragment(){
 
+    // fragment -> activity (값넘길 interface자체 생성)
     interface OnDataPassListener{
         fun onDataPass(data: String?)
     }

@@ -9,9 +9,7 @@ class NullSafety : AppCompatActivity() {
     //var lateNumber: Car -> 오류(선언x)
     lateinit var lateNumber: Car
 
-    class Car(var number:Int){
-
-    }
+    class Car(var number:Int){}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +30,7 @@ class NullSafety : AppCompatActivity() {
 
         // val number5: Int = number1 + 10
         // !! -> 개발자가 해당 변수가 null이 아님을 보장하는 것. 실제로는 null일 수 있음. 사용 비추
-        val number5: Int = number1!! + 10
+        //val number5: Int = number1!! + 10
 
         //val number3 = number1? + number
         val number3 = number1?.plus(number)
