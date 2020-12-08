@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myapplication">
-    <!-- 인터넷사용 -->
-    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 인터넷 -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 카메라 -->
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
+        android:name=".MasterApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -12,16 +14,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         android:usesCleartextTraffic="true">
-        <activity android:name=".RetrofitActivity">
-        </activity>
-        <activity android:name=".NetworkActivity"></activity>
-        <activity android:name=".AsyncActivity">
+        <activity android:name=".OutStagramPostListActivity"></activity>
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".EmailSignupActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".PermissionActivity" />
+        <activity android:name=".RetrofitActivity" />
+        <activity android:name=".NetworkActivity" />
+        <activity android:name=".AsyncActivity" />
         <activity android:name=".RealmActivity" />
         <activity android:name=".SharedPreferenceActivity" />
         <activity android:name=".TabPager2Activity" />
@@ -34,7 +39,7 @@
         <activity android:name=".AddViewActivity" />
         <activity android:name=".LibraryActivity" />
         <activity android:name=".ThreadActivity" />
-        <activity android:name=".Context" />
+        <activity android:name=".ContextActivity" />
         <activity android:name=".Resource" />
         <activity android:name=".NullSafety" />
         <activity android:name=".FragmentActivity" />

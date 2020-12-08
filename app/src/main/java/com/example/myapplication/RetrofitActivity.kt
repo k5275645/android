@@ -2,6 +2,10 @@ package com.example.myapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -20,5 +24,67 @@ class RetrofitActivity : AppCompatActivity() {
 
         val service = retrofit.create(RetrofitService::class.java)
 
+        //GET요청
+        service.getStudentsList().enqueue(object : Callback<ArrayList<PersonFromServer>> {
+            override fun onFailure(call: Call<ArrayList<PersonFromServer>>, t: Throwable) {
+                Log.d("retrofitt", "ERROR")
+            }
+
+            override fun onResponse(
+                call: Call<ArrayList<PersonFromServer>>,
+                response: Response<ArrayList<PersonFromServer>>
+            ) {
+                // isSuccessful타고 가면 200번대(성공)는 true가 return이 된다.
+                if (response.isSuccessful) {
+                    val personList = response.body()
+                    Log.d("retrofitt", "res : " + personList?.get(0)?.age)
+
+                    val code = response.code()
+                    Log.d("retrofitt", "code : " + code)
+
+                    val error = response.errorBody()
+                    Log.d("retrofitt", "error : " + error)
+                    val header = response.headers()
+                    Log.d("retrofitt", "header : " + header)
+                }
+            }
+        })
+
+         //POST요청 (1)
+//        val params = HashMap<String, Any>()
+//        params.put("name", "김개똥")
+//        params.put("age", 200)
+//        params.put("intro", "안녕하세요")
+//        service.createStudent(params).enqueue(object: Callback<PersonFromServer>{
+//            override fun onResponse(
+//                call: Call<PersonFromServer>,
+//                response: Response<PersonFromServer>
+//            ) {
+//                if(response.isSuccessful){
+//                    val person = response.body()
+//                    Log.d("retrofitt", "name : " + person?.name)
+//                }
+//            }
+//
+//            override fun onFailure(call: Call<PersonFromServer>, t: Throwable) {
+//            }
+//        })
+
+        // POST요청 (2)
+        val person = PersonFromServer(name = "아무개", age = 40000, intro = "아무개입니당")
+        service.createStudentEasy(person).enqueue(object: Callback<PersonFromServer>{
+            override fun onResponse(
+                call: Call<PersonFromServer>,
+                response: Response<PersonFromServer>
+            ) {
+                if(response.isSuccessful){
+                    val person = response.body()
+                    Log.d("retrofitt", "name : " + person?.name)
+                }
+            }
+
+            override fun onFailure(call: Call<PersonFromServer>, t: Throwable) {
+            }
+        })
     }
 }
